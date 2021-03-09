@@ -17,7 +17,7 @@ export function RepositoryList(){
      nao atualizar variavel de controle dentro da função 
     */
     useEffect(()=> {
-      fetch('https://api.github.com/orgs/rocketseat/repos')
+      fetch('https://api.github.com/users/elciocf/repos')
         .then(response => response.json())
         .then(data => setRepositories(data))
     }, [])
