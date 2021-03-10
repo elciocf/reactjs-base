@@ -2,6 +2,11 @@ import {useState, useEffect} from 'react'
 import { RepositoryItem } from "./RepositoryItem"
 import '../styles/repositories.scss'
 
+interface Repository {
+  name: string;
+  description: string;
+  html_url: string;
+}
 
 /*
 HOOK - funções do react que voce importa que começam com use -- exemplo: useState
@@ -10,7 +15,7 @@ useEffect - para disparar função quando algo acontecer - variavel mudou
 */
 
 export function RepositoryList(){
-    const [repositories,setRepositories] = useState([])
+    const [repositories,setRepositories] = useState<Repository[]>([])
    
     /*Toda vez que a variavel repositories mudar a função executa - caso passe vazio só executa uma unica vez
      nao deixar sem segundo parametro pois entrará em loop
